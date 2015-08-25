@@ -36,12 +36,12 @@
         int keyState = (((keyFlags & 0xFF00) >> 8)) == 0xA;
 		
 		if(keyCode == 10 && keyFlags == 6972) {
-            
-            switch ([event data2]) {
+            NSInteger eventData = [event data2];
+            switch (eventData) {
                 case 786608: // Play / Pause on OS < 10.10 Yosemite
                 case 786637: // Play / Pause on OS >= 10.10 Yosemite
-                    NSLog(@"Play/Pause bluetooth keypress detected...sending corresponding media key event");
-                    [MediaKey send:NX_KEYTYPE_PLAY];
+                    // NSLog(@"Play/Pause bluetooth keypress detected...sending corresponding media key event");
+                    // [MediaKey send:NX_KEYTYPE_PLAY];
                     break;
                 case 786611: // Next
                     NSLog(@"Next bluetooth keypress detected...sending corresponding media key event");
